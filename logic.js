@@ -15,15 +15,19 @@ function logout() {
 
 // Content type selection
 function setContentType(type) {
+    // Hide all input sections first
     ['linkInput', 'textInput', 'screenshotInput'].forEach(id => {
         document.getElementById(id).classList.add('hidden');
     });
+    // Show the selected input section
     document.getElementById(type + 'Input').classList.remove('hidden');
 }
 
 // Form submission
 document.getElementById('reportForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    
+    // Hide form and show analysis status
     document.getElementById('submissionForm').classList.add('hidden');
     document.getElementById('analysisStatus').classList.remove('hidden');
     
